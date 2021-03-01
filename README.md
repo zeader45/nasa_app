@@ -65,7 +65,7 @@ Host Mount|Container Mount|Purposse
 /mnt/spark-data|/opt/spark-data| Used to make available your app's data on all workers & master
 
 
-## Run Nasa_app in the master container and show results
+## Run nasa_app and show results
 
 from the project root directory, run 
 ```sh
