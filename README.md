@@ -23,7 +23,6 @@ The following steps will make you run your spark cluster's containers.
 
 * Docker compose  installed
 
-* A spark Application Jar
 
 ## Build the images
 
