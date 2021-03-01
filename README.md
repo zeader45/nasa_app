@@ -13,16 +13,15 @@ spark-worker-1|10.5.0.3
 spark-worker-2|10.5.0.4
 spark-worker-3|10.5.0.5
 
-# Installation
+# Steps to run the app
 
-The following steps will make you run your spark cluster's containers.
+Need to run following steps to see final results according to the assignment requirement.
 
 ## Pre requisites
 
 * Docker installed
 
 * Docker compose  installed
-
 
 ## Build the images
 
@@ -37,13 +36,13 @@ chmod +x build-images.sh
 
 This will create the following docker images:
 
-* spark-base:2.4.7: A base image based on java:alpine-jdk-8 wich ships scala, python3 and spark 2.4.7
+* spark-base:2.4.3: A base image based on java:alpine-jdk-8 wich ships scala, python3 and spark 2.4.7
 
-* spark-master:2.4.7: A image based on the previously created spark image, used to create a spark master containers.
+* spark-master:2.4.3: A image based on the previously created spark image, used to create a spark master containers.
 
-* spark-worker:2.4.7: A image based on the previously created spark image, used to create spark worker containers.
+* spark-worker:2.4.3: A image based on the previously created spark image, used to create spark worker containers.
 
-* spark-submit:2.4.7: A image based on the previously created spark image, used to create spark submit containers(run, deliver driver and die gracefully).
+* spark-submit:2.4.3: A image based on the previously created spark image, used to create spark submit containers(run, deliver driver and die gracefully).
 
 ## Run the docker-compose
 
@@ -68,7 +67,7 @@ Host Mount|Container Mount|Purposse
 
 from the project root directory, run 
 ```sh
-docker exec -it nasa_app_spark-master_1 spark/bin/spark-submit --driver-memory 2g  --class NasaDataProcessor  /opt/spark-apps/nasa_app_2.11-0.1.jar  5
+docker exec -it nasa_app_spark-master_1 spark/bin/spark-submit --master spark://spark-master:7077 --deploy-mode client --driver-memory 2g --class NasaDataProcessor  /opt/spark-apps/nasa_app_2.11-0.1.jar  5
 ```
 The last argument can be changed to any number you want which stands for TopN.
 
