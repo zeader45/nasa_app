@@ -71,3 +71,6 @@ from the project root directory, run
 docker exec -it nasa_app_spark-master_1 spark/bin/spark-submit --driver-memory 2g  --class NasaDataProcessor  /opt/spark-apps/nasa_app_2.11-0.1.jar  5
 ```
 The last argument can be changed to any number you want which stands for TopN.
+
+## Note
+The .jar file is saved in nasa_app/apps/
