@@ -15,6 +15,7 @@ spark-worker-3|10.5.0.5
 
 # Steps to run the app
 
+Clone the project to your local machine. 
 Need to run following steps to see final results according to the assignment requirement.
 
 ## Pre requisites
